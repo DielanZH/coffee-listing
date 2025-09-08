@@ -21,14 +21,30 @@ function Home() {
 
     return (
         <>
-            <div className="mx-auto my-auto max-h-fit max-w-fit bg-[#1B1D1F] text-[#FEF7EE]">
+            <div className="mx-auto my-40 py-16 max-h-fit max-w-fit bg-[#1B1D1F] text-[#FEF7EE] rounded-2xl font-dm-sans">
 
-                <div className="mx-auto max-w-xl">
-                    <h2 className="text-2xl font-bold mb-2">Our Collection</h2>
+                <div className="mx-auto w-fit">
 
-                    <p>Introducing our Coffee Collection,
+                    <h2 className="mx-auto text-[2rem] font-bold mb-2 w-fit">Our Collection</h2>
+
+                    <p className="w-md text-center">
+                        Introducing our Coffee Collection,
                         a selection of unique coffees from different roast types and origins,
-                        expertly roasted in small batches and shipped fresh weekly.</p>
+                        expertly roasted in small batches and shipped fresh weekly.
+                    </p>
+
+                    <div className="flex justify-center gap-15 my-5">
+
+                        <button className="focus:bg-[#6F757C] rounded-lg p-2 px-4 font-bold">
+                            All products
+                        </button>
+
+                        <button className="focus:bg-[#6F757C] rounded-lg p-2 px-4 font-bold">
+                            Available Now
+                        </button>
+
+                    </div>
+
                 </div>
 
                 <CardList coffeeData={coffeeData} />
