@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CardList from "./CardList";
+import vector from '../assets/vector.svg';
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -25,13 +26,21 @@ function Home() {
 
                 <div className="mx-auto w-fit">
 
-                    <h2 className="mx-auto text-[2rem] font-bold mb-2 w-fit">Our Collection</h2>
+                    <div>
+                        <img src={vector} className="absolute z-0 mx-auto ml-60 -mt-10" alt="Coffee Collection" />
 
-                    <p className="w-md text-center">
-                        Introducing our Coffee Collection,
-                        a selection of unique coffees from different roast types and origins,
-                        expertly roasted in small batches and shipped fresh weekly.
-                    </p>
+                        <div className="relative z-10">
+                            <h2 className="mx-auto text-[2rem] font-semibold mb-2 w-fit">Our Collection</h2>
+
+                            <p className="text-center text-[14px] text-[#6F757C] font-semibold w-xl p-2 lg:w-lg lg:p-0">
+                                Introducing our Coffee Collection,
+                                a selection of unique coffees from different roast types and origins,
+                                expertly roasted in small batches and shipped fresh weekly.
+                            </p>
+                        </div>
+
+                    </div>
+
 
                     <div className="flex justify-center gap-15 my-5">
 

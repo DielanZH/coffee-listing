@@ -20,7 +20,7 @@ function CardList({ coffeeData }: CardListProps) {
     return (
         <div className='flex justify-center'>
 
-            <div className='mx-32 my-8 grid grid-cols-3 gap-8'>
+            <div className='my-8 mx-40 grid grid-cols-1 gap-8 lg:grid-cols-3 lg:mx-12 xl:mx-32'>
                 {coffeeData.map(coffee => (
                     <Card key={coffee.id} coffee={coffee} />
                 ))}
