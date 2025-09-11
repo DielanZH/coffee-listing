@@ -45,11 +45,20 @@ function Home() {
 
                     <div className="flex justify-center gap-15 my-5">
 
-                        <button onClick={() => setFilterAvailable(false)} className="focus:bg-[#6F757C] rounded-lg p-2 px-4 font-bold">
+                        <button
+                            onClick={() => setFilterAvailable(false)}
+                            className={`rounded-lg p-2 px-4 font-semibold cursor-pointer transition-colors
+                                ${!filterAvailable ? "bg-[#6F757C] text-[#FEF7EE]" : "bg-transparent"}`}
+                            autoFocus
+                        >
                             All products
                         </button>
 
-                        <button onClick={() => setFilterAvailable(true)} className="focus:bg-[#6F757C] rounded-lg p-2 px-4 font-bold">
+                        <button
+                            onClick={() => setFilterAvailable(true)}
+                            className={`rounded-lg p-2 px-4 font-semibold cursor-pointer transition-colors
+                                ${filterAvailable ? "bg-[#6F757C] text-[#FEF7EE]" : "bg-transparent"}`}
+                        >
                             Available Now
                         </button>
 
