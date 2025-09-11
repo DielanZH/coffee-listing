@@ -9,11 +9,12 @@ function Home() {
 
     const [coffeeData, setCoffeeData] = useState([]);
 
+    const [filterAvailable, setFilterAvailable] = useState(false);
+
     useEffect(() => {
         axios.get(apiUrl)
             .then((response) => {
                 setCoffeeData(response.data);
-                console.log(response.data);
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
@@ -44,11 +45,11 @@ function Home() {
 
                     <div className="flex justify-center gap-15 my-5">
 
-                        <button className="focus:bg-[#6F757C] rounded-lg p-2 px-4 font-bold">
+                        <button onClick={() => setFilterAvailable(false)} className="focus:bg-[#6F757C] rounded-lg p-2 px-4 font-bold">
                             All products
                         </button>
 
-                        <button className="focus:bg-[#6F757C] rounded-lg p-2 px-4 font-bold">
+                        <button onClick={() => setFilterAvailable(true)} className="focus:bg-[#6F757C] rounded-lg p-2 px-4 font-bold">
                             Available Now
                         </button>
 
@@ -56,7 +57,7 @@ function Home() {
 
                 </div>
 
-                <CardList coffeeData={coffeeData} />
+                <CardList coffeeData={coffeeData} filterAvailable={filterAvailable} />
             </div>
         </>
     )

@@ -13,15 +13,22 @@ export interface Coffee {
 
 interface CardListProps {
     coffeeData: Coffee[];
+    filterAvailable: boolean;
 }
 
 
-function CardList({ coffeeData }: CardListProps) {
+function CardList({ coffeeData, filterAvailable }: CardListProps) {
+
+    const filteredData = coffeeData.filter(coffee => coffee.available);
+    console.log(filteredData);
+
     return (
         <div className='flex justify-center'>
 
             <div className='my-8 mx-40 grid grid-cols-1 gap-8 lg:grid-cols-3 lg:mx-12 xl:mx-32'>
-                {coffeeData.map(coffee => (
+                {filterAvailable ? filteredData.map(coffee => (
+                    <Card key={coffee.id} coffee={coffee} />
+                )) : coffeeData.map(coffee => (
                     <Card key={coffee.id} coffee={coffee} />
                 ))}
             </div>
