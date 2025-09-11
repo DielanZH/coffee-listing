@@ -48,7 +48,7 @@ function Home() {
                         <button
                             onClick={() => setFilterAvailable(false)}
                             className={`rounded-lg p-2 px-4 font-semibold cursor-pointer transition-colors
-                                ${!filterAvailable ? "bg-[#6F757C] text-[#FEF7EE]" : "bg-transparent"}`}
+                                ${!filterAvailable ? "bg-[#6F757C] text-[#FEF7EE] focus:outline-none" : "bg-transparent"}`}
                             autoFocus
                         >
                             All products
@@ -57,7 +57,7 @@ function Home() {
                         <button
                             onClick={() => setFilterAvailable(true)}
                             className={`rounded-lg p-2 px-4 font-semibold cursor-pointer transition-colors
-                                ${filterAvailable ? "bg-[#6F757C] text-[#FEF7EE]" : "bg-transparent"}`}
+                                ${filterAvailable ? "bg-[#6F757C] text-[#FEF7EE] focus:outline-none" : "bg-transparent"}`}
                         >
                             Available Now
                         </button>
